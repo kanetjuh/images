@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "version": "AL_V1"
+  }
+  "name": "Minecraft Java: Paper",
+  "description": "PaperMC is an optimized, high-performance fork of SpigotMC for Minecraft servers. It aims to improve performance and stability by offering additional features, enhanced configuration options, and bug fixes. Known for its robust plugin compatibility and active development community, PaperMC is a preferred choice for server administrators looking to enhance their Minecraft multiplayer experience.",
+  "author": "ludo@overnode.fr",
+  "authorName": "AirLink Labs",
+  "docker_images": {
+    "Java 8": "",
+  },
+  "startup": "START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar $AL(Jar_Startup)",
+  "info": {
+    "features":[
+      "eula"
+    ],
+    "stop": "stop"
+  },
+  "scripts": {
+    "install": [
+      {
+        "url": "https://api.papermc.io/v2/projects/paper/versions/$AL(Version)/builds/$AL(Build)/downloads/paper-$AL(Version)-$AL(Build).jar",
+        "fileName": "server.jar"
+      },
+      {
+        "url": "",
+        "fileName": "server.properties"
+      }
+    ]
+  },
+  "variables": {
+    "Jar_Startup": {
+      "type": "text",
+      "default": "server.jar",
+      "required": true
+    },
+    "Version": {
+      "type": "text",
+      "default": "1.21.1",
+      "required": true
+    },
+    "Build": {
+      "type": "text",
+      "default": "89",
+      "required": true
+    }
+  }
+}
