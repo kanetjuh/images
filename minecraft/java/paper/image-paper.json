@@ -23,7 +23,7 @@
         "fileName": "server.jar"
       },
       {
-        "url": "",
+        "url": "https://raw.githubusercontent.com/airlinklabs/images/refs/heads/main/minecraft/java/server.properties",
         "fileName": "server.properties"
       }
     ]
