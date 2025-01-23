@@ -7,7 +7,7 @@
   "author": "ludo@overnode.fr",
   "authorName": "AirLink Labs",
   "docker_images": {
-    "Java21": "ghcr.io/airlinklabs/java:21"
+    "Java 21": "ghcr.io/airlinklabs/java:21"
   },
   "startup": "START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar $Jar_Startup",
   "info": {
