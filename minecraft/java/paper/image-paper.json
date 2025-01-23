@@ -9,9 +9,9 @@
   "docker_images": {
     "Java21": "ghcr.io/airlinklabs/java:21"
   },
-  "startup": "START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar $AL(Jar_Startup)",
+  "startup": "START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar $Jar_Startup",
   "info": {
-    "features":[
+    "features": [
       "eula"
     ],
     "stop": "stop"
@@ -28,21 +28,27 @@
       }
     ]
   },
-  "variables": {
-    "Jar_Startup": {
+  "variables": [
+    {
+      "env": "JAR_STARTUP",
+      "value": "server.jar",
       "type": "text",
-      "default": "server.jar",
+      "name": "Jar Startup",
       "required": true
     },
-    "Version": {
+    {
+      "env": "VERSION",
+      "value": "1.21.1",
       "type": "text",
-      "default": "1.21.1",
+      "name": "Minecraft Version",
       "required": true
     },
-    "Build": {
+    {
+      "env": "BUILD",
+      "value": "89",
       "type": "text",
-      "default": "89",
+      "name": "Build Number",
       "required": true
     }
-  }
+  ]
 }
