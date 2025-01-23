@@ -6,9 +6,9 @@
   "description": "PaperMC is an optimized, high-performance fork of SpigotMC for Minecraft servers. It aims to improve performance and stability by offering additional features, enhanced configuration options, and bug fixes. Known for its robust plugin compatibility and active development community, PaperMC is a preferred choice for server administrators looking to enhance their Minecraft multiplayer experience.",
   "author": "ludo@overnode.fr",
   "authorName": "AirLink Labs",
-  "docker_images": {
-    "Java 21": "ghcr.io/airlinklabs/java:21"
-  },
+  "docker_images": [
+    {"Java 21": "ghcr.io/airlinklabs/java:21"}
+  ],
   "startup": "START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar $Jar_Startup",
   "info": {
     "features": [
