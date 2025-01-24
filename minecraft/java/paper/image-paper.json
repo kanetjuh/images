@@ -9,7 +9,7 @@
   "docker_images": [
     {"Java 21": "ghcr.io/airlinklabs/java:21"}
   ],
-  "startup": "START=java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar $ALVKT(Jar_Startup)",
+  "startup": "java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar $ALVKT(Jar_Startup)",
   "info": {
     "features": [
       "eula"
