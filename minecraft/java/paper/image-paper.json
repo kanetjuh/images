@@ -19,7 +19,7 @@
   "scripts": {
     "install": [
       {
-        "url": "https://api.papermc.io/v2/projects/paper/versions/$AL(Version)/builds/$AL(Build)/downloads/paper-$AL(Version)-$AL(Build).jar",
+        "url": "https://api.papermc.io/v2/projects/paper/versions/$ALVKT(Version)/builds/$ALVKT(Build)/downloads/paper-$ALVKT(Version)-$ALVKT(Build).jar",
         "fileName": "server.jar"
       },
       {
