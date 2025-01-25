@@ -12,7 +12,8 @@
   "startup": "java -Xms128M -XX:UseSVE=0 -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar $ALVKT(JAR_STARTUP)",
   "info": {
     "features": [
-      "eula"
+      "eula",
+      "auto-complete"
     ],
     "stop": "stop"
   },
