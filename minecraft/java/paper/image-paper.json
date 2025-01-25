@@ -46,7 +46,7 @@
     {
       "env": "BUILD",
       "value": "89",
-      "type": "text",
+      "type": "number",
       "name": "Build Number",
       "required": true
     }
