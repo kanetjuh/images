@@ -1,1 +1,53 @@
-
+{
+  "meta": {
+    "version": "AL_V1"
+  },
+  "name": "Node.JS Application",
+  "description": "This is a Node.js application container setup. It uses a customized Node.js Docker image to run your Node.js server. This setup is optimized for running the Node.js app with Docker.",
+  "author": "info@kanus.io",
+  "authorName": "kanus",
+  "docker_images": [
+    {"Node 20": "ghcr.io/kanetjuh/images:20-slim"}
+  ],
+  "startup": "node $ALVKT(JAR_STARTUP)",
+  "info": {
+    "features": [
+      "auto-restart",
+      "logs",
+      "env-variables"
+    ],
+    "stop": "process.stop"
+  },
+  "scripts": {
+    "install": [
+      {
+        "url": "https://raw.githubusercontent.com/your-repository/your-nodejs-app/main/server.js",
+        "fileName": "server.js"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/your-repository/your-nodejs-app/main/package.json",
+        "fileName": "package.json"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/your-repository/your-nodejs-app/main/.env",
+        "fileName": ".env"
+      }
+    ]
+  },
+  "variables": [
+    {
+      "env": "EXAMPLE",
+      "value": "This is an example",
+      "type": "text",
+      "name": "Node.JS Example Text on Startup",
+      "required": true
+    },
+    {
+      "env": "NODE_ENV",
+      "value": "production",
+      "type": "text",
+      "name": "Environment",
+      "required": true
+    }
+  ]
+}
