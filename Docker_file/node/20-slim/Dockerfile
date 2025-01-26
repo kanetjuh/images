@@ -1,4 +1,4 @@
-FROM openjdk:21-jdk-slim
+FROM node:20-slim
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -6,11 +6,10 @@ RUN apt-get update \
         ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-RUN useradd -r -u 1000 -d /app javauser \
-    && mkdir -p /app/data \
-    && chown -R javauser:javauser /app
+RUN mkdir -p /app/data \
+    && chown -R node:node /app
 
-USER javauser
+USER node
 
 WORKDIR /app/data
 
