@@ -21,15 +21,15 @@
   "scripts": {
     "install": [
       {
-        "url": "https://raw.githubusercontent.com/your-repository/your-nodejs-app/main/server.js",
+        "url": "https://raw.githubusercontent.com/kanetjuh/images/refs/heads/main/node/server.js",
         "fileName": "server.js"
       },
       {
-        "url": "https://raw.githubusercontent.com/your-repository/your-nodejs-app/main/package.json",
+        "url": "https://raw.githubusercontent.com/kanetjuh/images/refs/heads/main/node/package.json",
         "fileName": "package.json"
       },
       {
-        "url": "https://raw.githubusercontent.com/your-repository/your-nodejs-app/main/.env",
+        "url": "https://raw.githubusercontent.com/kanetjuh/images/refs/heads/main/node/.env",
         "fileName": ".env"
       }
     ]
