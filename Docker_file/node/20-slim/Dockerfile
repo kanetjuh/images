@@ -6,7 +6,8 @@ RUN apt-get update \
         ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /app/data \
+RUN useradd -r -u 1000 -d /app node \
+    && mkdir -p /app/data \
     && chown -R node:node /app
 
 USER node
