@@ -10,6 +10,12 @@
     "ghcr.io/kanetjuh/images:20-slim"
   ],
   "startup": "/start.sh",
+  "info": {
+    "features": [
+      "auto-restart",
+      "logs",
+      "env-variables"
+    ],
   "config": {
     "files": "{}",
     "startup": "{\n    \"done\": \"\",\n    \"userInteraction\": []\n}",
