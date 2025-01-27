@@ -1,21 +1,21 @@
 FROM node:20-slim
 
+# Update and install required dependencies
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         curl \
         ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
-# Add the start.sh script to the container
+# Set up the working directory
+WORKDIR /app/data
+
+# Copy the start.sh script
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
-# Create a non-root user
-RUN useradd -r -u 1000 -d /app node \
-    && mkdir -p /app/data \
-    && chown -R node:node /app
-
+# Switch to the default 'node' user that comes with the image
 USER node
-WORKDIR /app/data
 
+# Default command
 CMD ["/start.sh"]
