@@ -3,7 +3,7 @@ name: Publish Docker Image to GHCR
 on:
   push:
     branches:
-      - main  # Bouw en push alleen bij wijzigingen in de main branch
+      - main  # Build and push only when changes are pushed to the main branch
 
 jobs:
   build-and-push:
@@ -23,8 +23,8 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: .
-          file: Docker_file/node/20-slim/Dockerfile  # Geef het pad naar de Dockerfile aan
+          context: .  # Root of the repository as context
+          file: Docker_file/node/20-slim/Dockerfile  # Path to the Dockerfile
           push: true
           tags: |
             ghcr.io/kanetjuh/images:20-slim
