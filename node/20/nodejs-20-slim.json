@@ -1,13 +1,13 @@
 {
   "meta": {
-    "version": "PTDL_v1"
+    "version": "AL_V1"
   },
   "name": "Node.JS Application2",
-  "description": "This is a Node.js application container setup. It supports a variety of startup configurations and is ideal for running Node.js servers or applications.",
+  "description": "This is a Node.js application container setup. It uses a customized Node.js Docker image to run your Node.js server. This setup is optimized for running the Node.js app with Docker.",
   "author": "info@kanus.io",
-  "features": null,
-  "images": [
-    "ghcr.io/kanetjuh/images:20-slim"
+  "authorName": "kanus",
+  "docker_images": [
+    {"Node 20": "ghcr.io/kanetjuh/images:20-slim"}
   ],
   "startup": "/start.sh",
   "info": {
@@ -16,46 +16,38 @@
       "logs",
       "env-variables"
     ],
-  "config": {
-    "files": "{}",
-    "startup": "{\n    \"done\": \"\",\n    \"userInteraction\": []\n}",
-    "logs": "{\n    \"custom\": true,\n    \"location\": \"logs/latest.log\"\n}",
-    "stop": "^C"
+    "stop": "process.stop"
   },
   "scripts": {
-    "installation": {
-      "script": null,
-      "container": "node:20-slim",
-      "entrypoint": "/bin/sh"
-    }
+    "install": [
+      {
+        "url": "https://raw.githubusercontent.com/kanetjuh/images/refs/heads/main/node/server.js",
+        "fileName": "server.js"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/kanetjuh/images/refs/heads/main/node/package.json",
+        "fileName": "package.json"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/kanetjuh/images/refs/heads/main/node/.env",
+        "fileName": ".env"
+      }
+    ]
   },
   "variables": [
     {
-      "name": "Startup Command 1",
-      "description": "First command used to start the server. This is executed by default.",
-      "env_variable": "STARTUP_CMD",
-      "default_value": "npm install --save --production",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "required|string|max:256"
+      "env": "EXAMPLE",
+      "value": "This is an example",
+      "type": "text",
+      "name": "Node.JS Example Text on Startup",
+      "required": true
     },
     {
-      "name": "Startup Command 2",
-      "description": "Optional second startup command. If provided, this will be executed instead of the first command.",
-      "env_variable": "SECOND_CMD",
-      "default_value": "node server.js",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "nullable|string|max:256"
-    },
-    {
-      "name": "NODE_ENV",
-      "description": "Sets the Node.js environment mode (e.g., development, production).",
-      "env_variable": "NODE_ENV",
-      "default_value": "production",
-      "user_viewable": true,
-      "user_editable": true,
-      "rules": "required|string|max:256"
+      "env": "NODE_ENV",
+      "value": "production",
+      "type": "text",
+      "name": "Environment",
+      "required": true
     }
   ]
 }
