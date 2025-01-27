@@ -23,7 +23,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: .  # Root of the repository as context
+          context: Docker_file/node/20-slim  # Use the directory containing start.sh as context
           file: Docker_file/node/20-slim/Dockerfile  # Path to the Dockerfile
           push: true
           tags: |
