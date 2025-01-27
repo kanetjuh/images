@@ -10,8 +10,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Create the /app directory and set up the user with proper permissions
-RUN mkdir -p /app/data \
-    && useradd -r -u 1000 -m -d /app -s /bin/bash node \
+RUN useradd -r -u 1000 -d /app node \
+    && mkdir -p /app/data \
     && chown -R node:node /app
 
 # Download the bash script using curl
