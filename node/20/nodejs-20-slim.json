@@ -2,7 +2,7 @@
   "meta": {
     "version": "PTDL_v1"
   },
-  "name": "Node.JS Application",
+  "name": "Node.JS Application2",
   "description": "This is a Node.js application container setup. It supports a variety of startup configurations and is ideal for running Node.js servers or applications.",
   "author": "info@kanus.io",
   "features": null,
