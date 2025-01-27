@@ -9,7 +9,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Add the start.sh script from a URL or local source to the container
-RUN curl -o /start.sh https://raw.githubusercontent.com/kanetjuh/images/main/node/start.sh \
+RUN curl -o /start.sh https://raw.githubusercontent.com/kanetjuh/images/refs/heads/main/Docker_file/node/20-slim/start.sh \
     && chmod +x /start.sh  # Make the script executable
 
 # Create and configure the user for running the app
